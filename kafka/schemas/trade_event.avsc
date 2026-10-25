@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "TradeEvent",
+  "namespace": "com.cryptopipeline.v1",
+  "doc": "A single exchange trade, as staged in PostgreSQL.",
+  "fields": [
+    {"name": "event_id", "type": "string", "doc": "symbol:trade_id - natural dedupe key"},
+    {"name": "symbol", "type": "string"},
+    {"name": "trade_id", "type": "long"},
+    {"name": "price", "type": "double"},
+    {"name": "volume", "type": "double"},
+    {"name": "side", "type": "string", "doc": "b = buy, s = sell"},
+    {"name": "order_type", "type": "string", "doc": "m = market, l = limit"},
+    {"name": "trade_ts_ms", "type": "long", "doc": "event time, epoch milliseconds (UTC)"},
+    {"name": "exchange", "type": "string", "default": "kraken"},
+    {"name": "schema_version", "type": "int", "default": 1}
+  ]
+}

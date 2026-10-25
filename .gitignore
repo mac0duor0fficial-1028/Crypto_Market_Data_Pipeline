@@ -1,10 +1,31 @@
-# Python-generated files
+# Environment variables
+.env
+
+# Python cache
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+*.pyc
+.pytest_cache/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Logs
+logs/
+*.log
+
+# Airflow
+airflow.db
+airflow.cfg
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Virtual environments
-.venv
+venv/
+env/
+.venv/
+
+# Local Spark / key material
+spark-checkpoints/
+*.pem
