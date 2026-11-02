@@ -3,14 +3,9 @@
 A real-time data pipeline that pulls live crypto trades from Kraken, streams them through Kafka, crunches them with Spark, and serves per-minute stats from Cassandra.
 > **Kraken API → Airflow → PostgreSQL → Kafka (Avro + Schema Registry) → Spark Structured Streaming → Cassandra → REST API**. 
 
-```mermaid
-flowchart LR
-    K[Kraken API] --> A[Airflow]
-    A --> P[(PostgreSQL)]
-    P --> KF[[Kafka]]
-    KF --> S[Spark]
-    S --> C[(Cassandra)]
-```
+## Architectural Overview
+![Crypto Data Pipeline Architecture](docs/Screenshot 2026-11-02 225520.png)
+
 
 | Step | Tool | What it does |
 |---|---|---|
