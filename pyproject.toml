@@ -12,3 +12,8 @@ dependencies = [
     "requests>=2.34.2",
     "tenacity>=9.2.1",
 ]
+
+[dependency-groups]
+spark = [
+    "pyspark==3.5.1",
+]
