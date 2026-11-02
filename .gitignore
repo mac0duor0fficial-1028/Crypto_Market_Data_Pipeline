@@ -1,0 +1,33 @@
+# Environment variables
+.env
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Logs
+logs/
+*.log
+
+# Airflow
+airflow.db
+airflow.cfg
+
+# Spark checkpoints
+checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+.venv
+venv/
+env/
