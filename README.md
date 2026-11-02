@@ -4,7 +4,7 @@ A real-time data pipeline that pulls live crypto trades from Kraken, streams the
 > **Kraken API → Airflow → PostgreSQL → Kafka (Avro + Schema Registry) → Spark Structured Streaming → Cassandra → REST API**. 
 
 ## Architectural Overview
-![Crypto Data Pipeline Architecture](docs/Screenshot 2026-11-02 225520.png)
+![Crypto Data Pipeline Architecture](docs/crypto-architecture.png)
 
 
 | Step | Tool | What it does |
