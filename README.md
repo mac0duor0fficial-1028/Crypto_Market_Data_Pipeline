@@ -30,6 +30,38 @@ flowchart LR
 
 Check Kraken's [API docs](https://docs.kraken.com/) for current rate limits and regional availability.
 
+## Project layout
+
+```text
+crypto-pipeline/
+├── docker-compose.yml
+├── .env.example
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── sql/
+│   └── postgres_init.sql
+├── cassandra/
+│   └── init.cql
+├── airflow/
+│   └── dags/
+│       └── kraken_ingest_dag.py
+├── src/
+│   ├── kraken_client.py
+│   ├── validation.py
+│   ├── db.py
+│   └── publisher.py
+├── spark/
+│   └── trade_aggregates.py
+├── kafka/
+│   └── topics.sh
+├── tests/
+│   ├── test_validation.py
+│   └── test_client.py
+└── docs/
+    └── architecture.png
+```
+
 ## Quick start
 
 **1. Configure**
@@ -117,38 +149,6 @@ Everything is set in `.env` (never commit it; commit only `.env.example`).
 | `KAFKA_BOOTSTRAP_SERVERS` | Broker address | `kafka:9092` |
 | `KAFKA_TOPIC_TRADES` | Trades topic | `kraken.trades.v1` |
 | `CASSANDRA_HOST` / `CASSANDRA_KEYSPACE` | Serving database | `cassandra` / `crypto` |
-
-## Project layout
-
-```text
-crypto-pipeline/
-├── docker-compose.yml
-├── .env.example
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── sql/
-│   └── postgres_init.sql
-├── cassandra/
-│   └── init.cql
-├── airflow/
-│   └── dags/
-│       └── kraken_ingest_dag.py
-├── src/
-│   ├── kraken_client.py
-│   ├── validation.py
-│   ├── db.py
-│   └── publisher.py
-├── spark/
-│   └── trade_aggregates.py
-├── kafka/
-│   └── topics.sh
-├── tests/
-│   ├── test_validation.py
-│   └── test_client.py
-└── docs/
-    └── architecture.png
-```
 
 ## Local development
 
